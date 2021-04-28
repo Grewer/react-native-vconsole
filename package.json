@@ -1,0 +1,85 @@
+{
+  "name": "@grewer/react-native-vconsole",
+  "version": "0.1.3",
+  "description": "vconsole for react native",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "postversion": "git push --tags && git push && npm publish"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "files": [
+    "build",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Grewer/react-native-vconsole"
+  },
+  "keywords": [
+    "vconsole;",
+    "debugger;",
+    "console;",
+    "react-native;"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Grewer/react-native-vconsole"
+  },
+  "homepage": "https://github.com/Grewer/react-native-vconsole",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": ">=0.50.0"
+  },
+  "devDependencies": {
+    "@sishuguojixuefu/eslint-config": "^0.8.4",
+    "@types/react": "^17.0.4",
+    "@types/react-native": "^0.64.4",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@sishuguojixuefu"
+    ],
+    "env": {
+      "react-native/react-native": true
+    },
+    "rules": {
+      "no-restricted-syntax": 0,
+      "no-cond-assign": 0,
+      "guard-for-in": 0,
+      "no-param-reassign": 0,
+      "no-unused-vars": 0
+    }
+  },
+  "eslintIgnore": [
+    "!.eslintrc.js",
+    "!.prettierrc.js"
+  ],
+  "prettier": "@sishuguojixuefu/eslint-config/.prettierrc.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "**/*.{md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "@sishuguojixuefu/react-native-json-tree": "^1.2.5",
+    "dayjs": "^1.10.4"
+  }
+}
