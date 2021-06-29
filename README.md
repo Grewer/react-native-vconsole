@@ -56,7 +56,7 @@ render() {
             // 另外的的面板
             panels={panels}
             // console.time 可辨别是否开启 debug 网页
-            console={!console.time}
+            console={__DEV__ ? !console.time : true}
         />
     </View>
   )
